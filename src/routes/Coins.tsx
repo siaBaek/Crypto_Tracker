@@ -106,7 +106,10 @@ function Coins() {
               >
                 <div>
                   <Img
-                    src={`https://cryptoicon-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}
+                    src={`https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/${coin.name
+                      .toLowerCase()
+                      .split(" ")
+                      .join("-")}.png`}
                   />
                   {coin.name} &rarr;
                 </div>

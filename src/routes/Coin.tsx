@@ -200,7 +200,10 @@ function Coin() {
       </GoBack>
       <Header>
         <Img
-          src={`https://cryptoicon-api.vercel.app/api/icon/${tickersData?.symbol.toLowerCase()}`}
+          src={`https://raw.githubusercontent.com/ErikThiart/cryptocurrency-icons/master/16/${tickersData?.name
+            .toLowerCase()
+            .split(" ")
+            .join("-")}.png`}
         />
         <Title>
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
@@ -243,6 +246,7 @@ function Coin() {
               <span>{tickersData?.max_supply}</span>
             </OverviewItem>
           </Overview>
+
           <Tabs>
             <Tab isActive={chartMatch !== null}>
               <Link to={`/${coinId}/chart`}>Chart</Link>
@@ -251,6 +255,7 @@ function Coin() {
               <Link to={`/${coinId}/price`}>Price</Link>
             </Tab>
           </Tabs>
+
           <Switch>
             <Route path={`/:coinId/price`}>
               <Price coinId={coinId} />
